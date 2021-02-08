@@ -3,7 +3,7 @@ mlnx_ofed=mlnx-ofed-kernel-utils_5.2-OFED.5.2.1.0.4.1_amd64.deb
 
 # Install packages
 sudo apt update
-cat packages.txt | xargs sudo apt-get -y install
+cat rdma-benchmark-packages.txt | xargs sudo apt-get -y install
 wget http://www.mellanox.com/downloads/ofed/MLNX_OFED-5.2-1.0.4.0/MLNX_OFED_LINUX-5.2-1.0.4.0-ubuntu18.04-x86_64.tgz
 tar zxf MLNX_OFED_LINUX-5.2-1.0.4.0-ubuntu18.04-x86_64.tgz
 cd MLNX_OFED_LINUX-5.2-1.0.4.0-ubuntu18.04-x86_64/DEBS/ || exit
