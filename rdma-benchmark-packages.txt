@@ -1,0 +1,19 @@
+ibacm
+libibmad-dev
+libsdpa-dev
+ibverbs-providers
+libibverbs-dev
+infiniband-diags
+perftest
+opensm
+rdma-core
+mstflint
+libibverbs1
+ibverbs-utils
+ibverbs-providers
+librdmacm1
+libibverbs-dev
+librdmacm1
+rdmacm-utils
+libibumad3
+libnl-3-dev libnl-route-3-dev
