@@ -8,12 +8,14 @@ cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/authorized_keys
 
 # Install packages
-sudo apt update
-sudo apt-get --assume-yes install mosh vim tmux pdsh tree axel python3 python3-pip
-sudo apt-get --assume-yes install linux-tools-common linux-tools-${kernel_release} \
-        hugepages cpuset msr-tools i7z
+apt update
+apt --assume-yes install mosh vim tmux pdsh tree axel python3 python3-pip
+apt --assume-yes install linux-tools-common linux-tools-${kernel_release} hugepages cpuset msr-tools i7z
 
 kernel_boot_params="intel_iommu=on iommu=pt"
-sudo sed -i "s/GRUB_CMDLINE_LINUX=\"/GRUB_CMDLINE_LINUX=\"$kernel_boot_params /" /etc/default/grub
-sudo update-grub
-sudo reboot
+sed -i "s/GRUB_CMDLINE_LINUX=\"/GRUB_CMDLINE_LINUX=\"$kernel_boot_params /" /etc/default/grub
+update-grub
+
+> /local/startup_service_done
+echo "Startup service finished"
+reboot
