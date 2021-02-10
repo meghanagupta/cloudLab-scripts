@@ -15,7 +15,4 @@ apt --assume-yes install linux-tools-common linux-tools-${kernel_release} hugepa
 kernel_boot_params="intel_iommu=on iommu=pt"
 sed -i "s/GRUB_CMDLINE_LINUX=\"/GRUB_CMDLINE_LINUX=\"$kernel_boot_params /" /etc/default/grub
 update-grub
-
-> /local/startup_service_done
-echo "Startup service finished"
 reboot
