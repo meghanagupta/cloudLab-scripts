@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+if [ -f /local/startup_service_done ]; then
+    exit 0
+fi
+
 # Add keys to ssh between nodes
 /usr/bin/geni-get key > ~/.ssh/id_rsa
 chmod 600 ~/.ssh/id_rsa
@@ -15,4 +19,7 @@ apt --assume-yes install linux-tools-common linux-tools-${kernel_release} hugepa
 kernel_boot_params="intel_iommu=on iommu=pt"
 sed -i "s/GRUB_CMDLINE_LINUX=\"/GRUB_CMDLINE_LINUX=\"$kernel_boot_params /" /etc/default/grub
 update-grub
+
+> /local/startup_service_done
+
 reboot
