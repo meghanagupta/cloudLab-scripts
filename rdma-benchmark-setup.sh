@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 # Add keys to ssh between nodes
 /usr/bin/geni-get key > ~/.ssh/id_rsa
